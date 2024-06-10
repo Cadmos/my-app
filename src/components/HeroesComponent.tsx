@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import { GetRequest, PostRequest } from '../Services/NetworkController';
-import IRequest from '../Services/IRequest';
+import { GetRequest, PostRequest } from '../services/NetworkController';
+import IRequest from '../interfaces/IRequest';
 
 // Define the type for your hero data
 interface IHero {

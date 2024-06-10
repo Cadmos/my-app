@@ -1,4 +1,4 @@
-import IRequest from "./IRequest";
+import IRequest from "../interfaces/IRequest";
 
 
 function CreatePath(request: IRequest): string {

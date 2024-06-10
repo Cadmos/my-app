@@ -4,7 +4,7 @@ type CharacterTypeMapType = {
     [key: string]: CharacterType;
 };
 
-const CharacterTypeMap = {
+const CharacterTypeMap: CharacterTypeMapType = {
     'hero': CharacterType.Hero,
     'monster': CharacterType.Monster,
     'villager': CharacterType.Villager

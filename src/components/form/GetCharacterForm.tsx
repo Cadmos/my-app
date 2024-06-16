@@ -3,6 +3,8 @@ import GetRequest from "../../services/NetworkController";
 import IRequest from "../../interfaces/IRequest";
 import CharacterType from "../../types/CharacterType";
 import ICharacter from "../../interfaces/ICharacter";
+import {Select} from "@chakra-ui/react";
+import ChakraSelect from "../chakraSelect/ChakraSelect";
 
 type CharacterTypeMapType = {
     [key: string]: CharacterType;
@@ -45,13 +47,7 @@ const CharacterForm: React.FC = () => {
         <form onSubmit={handleFormSubmit}>
             <label>
                 Character type:
-                <select value={characterType} onChange={handleSelectChange}>
-                    {Object.values(CharacterType).map((type) => (
-                        <option key={type} value={type}>
-                            {CharacterTypeMap[type as keyof typeof CharacterTypeMap]}
-                        </option>
-                    ))}
-                </select>
+                <ChakraSelect options={Object.keys(CharacterTypeMap)} colorScheme="purple" />
             </label>
             <button type="submit">Get Characters</button>
         </form>

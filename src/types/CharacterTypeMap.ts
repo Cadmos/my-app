@@ -1,13 +1,11 @@
 import CharacterType from "./CharacterType";
 
-type CharacterTypeMapType = {
-    [key: string]: CharacterType;
-};
+type CharacterTypeMap = Record<keyof typeof CharacterType, string>;
 
-const CharacterTypeMap: CharacterTypeMapType = {
-    'hero': CharacterType.Hero,
-    'monster': CharacterType.Monster,
-    'villager': CharacterType.Villager
+const CharacterTypeMap: CharacterTypeMap = {
+    Hero: 'hero',
+    Monster: 'monster',
+    Villager: 'villager'
 };
 
 export default CharacterTypeMap;

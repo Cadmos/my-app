@@ -1,41 +1,19 @@
-import React, {useEffect} from 'react';
-import logo from './logo.svg';
-import './App.css';
-import GetRequest from "../../services/NetworkController";
-import IRequest from "../../interfaces/IRequest";
-import IHero from "../../interfaces/IHero";
-import CharacterForm from "../form/GetCharacterForm";
+import * as React from "react";
+import { ChakraProvider, Box, VStack, Grid, theme } from "@chakra-ui/react";
+import AuthForm from "../form/AuthForm";
 
 function App() {
-  useEffect(() => {
-    console.log('use effect was called');
-    const tempRequest : IRequest = { SubPath: 'heroes' };
-    GetRequest(tempRequest).then((data: IHero[]) => { // Use IHero to type the data
-      console.log(data);
-      // You can now access properties of a hero like data[0].name
-    }).catch((error) => {
-      console.error(error);
-    });
-  }, []);
-  return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <CharacterForm /> {/* Add CharacterForm component */}
-          <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-  );
+    return (
+        <ChakraProvider theme={theme}>
+            <Box textAlign="center" fontSize="xl">
+                <Grid minH="100vh" p={3}>
+                    <VStack spacing={8}>
+                        <AuthForm />
+                    </VStack>
+                </Grid>
+            </Box>
+        </ChakraProvider>
+    );
 }
 
 export default App;
